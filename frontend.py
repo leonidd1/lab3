@@ -2,6 +2,7 @@ from tkinter import *
 from architecture import *
 # Это я, Илья
 
+
 def clicked():
     res = f"Привет {txt.get()}"
     lbl.configure(text=res)
