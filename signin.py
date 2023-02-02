@@ -14,7 +14,7 @@ def login_button():
     elif ip.user_verification(login.get(), password.get()):
         if combobox.get() == 'Инвестор':
             signin_window.withdraw()
-            investor_log(login.get())
+            investor_log(login.get(), 0)
         if combobox.get() == 'Стартапер':
             signin_window.withdraw()
             import startupguy
