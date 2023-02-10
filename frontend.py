@@ -1,28 +1,67 @@
+import tkinter as tk
 from tkinter import *
+
+from config import host, user, password, db_name, port
 from architecture import *
-# Это я, Илья
-print
+from main import *
+
+
+ip = Repository()
 def clicked():
-    res = f"Привет {txt.get()}"
-    lbl.configure(text=res)
-    window.destroy()
-    window2 = Tk()
-    window2.title("Добро пожаловать в приложение PythonRu")
-    window2.geometry('1920x1080')
+    res1 = txt1.get()
+    # res2 = txt2.get()
+    print(type(ip.test2(res1)))
+    list = ip.test2(res1)
+    if not ip.test2(res1):
+        print(ip.test2(res1))
+        print('Список пустой шо')
+    else:
+        print(list[1])
+        print(list[1][1])
+        print('Список не пустой :)')
+    for i in list:
+        for j in i:
+            print(j)
 
+    # if ip.test(res1) != None:
+    #     print('Такой никнейм уже занят попробуйте другой')
+    # else:
+    #     print('Продолжайте регистрацию')
 
+    # tuple = ip.test(res1)
+    # for i in tuple:
+    #     print(i)
+    # print(tuple[1])
 
+    # if ip.checking_uniqueness(res1):
+    #     tuple = ip.checking_uniqueness(res1)
+    #     print('Такой никнейм уже занят попробуйте другой')
+    #     print(tuple[0])
+    # else:
+    #     print('Продолжайте регистрацию')
 
-window = Tk()
-window.title("Добро пожаловать в приложение PythonRu")
-window.geometry('1920x1080')
-lbl = Label(window, text="Привет", font=("Arial Bold", 50))
+window = tk.Tk()
+window.columnconfigure(1,weight=1, minsize=50)
+window.rowconfigure(1,weight=1, minsize=50)
+frm = tk.Frame()
+
+lbl = Label(master = frm, text="Имя: ")
 lbl.grid(column=0, row=0)
-txt = Entry(window, width=10)
-txt.focus()
-txt.grid(column=1, row=0)
-btn = Button(window, text="Не нажимать!", command=clicked)
-btn.grid(column=2, row=0)
+
+
+txt1 = Entry(window,width=10)
+txt1.grid(column=1, row=0)
+
+# lbl = Label(master = frm, text="Ник нейм: ")
+# lbl.grid(column=0, row=1)
+#
+# txt2 = Entry(window,width=10)
+# txt2.grid(column=1, row=1)
+
+btn = Button(master = frm, text="Продолжить", command=clicked)
+btn.grid(column=0, row=2)
+
+frm.grid()
 
 
 window.mainloop()

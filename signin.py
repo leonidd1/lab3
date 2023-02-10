@@ -3,7 +3,8 @@ from main import *
 from tkinter import messagebox
 import customtkinter
 from investor import investor_log
-# from PIL import ImageTk, Image
+from startupguy import startup_log
+
 
 ip = Repository()
 
@@ -17,7 +18,7 @@ def login_button():
             investor_log(login.get(), 0)
         if combobox.get() == 'Стартапер':
             signin_window.withdraw()
-            import startupguy
+            startup_log(login.get(), 0)
     else:
         messagebox.showerror('Ошибка', 'Неверный логин или пароль')
 
