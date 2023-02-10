@@ -144,6 +144,7 @@ FROM startups WHERE name_startup = '{0}'"""
                             .format(name_startup, data))
             return cursor.fetchone()
 
+
     def startaper_income(self, name_startup):
         with self.connection.cursor() as cursor:
             cursor.execute(""" 

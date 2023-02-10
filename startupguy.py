@@ -16,6 +16,7 @@ def startup_log(login,per):
                 messagebox.showerror('Ошибка', 'Стартап с таким именем уже существует. Пожалуйста придумайте другой')
             else:
 
+
                 try:
                     ip.insert_into_startups(name_startup.get(), login, int(planned_cost.get()), int(percent.get()))
                     messagebox.showerror('Успех', 'Стартап создан успешно. Пожалуйста обновите страницу')

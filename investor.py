@@ -95,6 +95,7 @@ def investor_log(login, per):
 
     def invest(name):
 
+
         def cancel():
             frame5.grid_forget()
         def go_in(name, inv):
